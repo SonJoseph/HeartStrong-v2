@@ -1,6 +1,6 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import Navigator from './config/routes';
+import LoginNavigator from './config/loginRoutes';
 
 EStyleSheet.build({
   $primaryPink: '#e28383',
@@ -8,4 +8,4 @@ EStyleSheet.build({
   $inputText: '#797979',
 });
 
-export default () => <Navigator />;
+export default () => <LoginNavigator />;

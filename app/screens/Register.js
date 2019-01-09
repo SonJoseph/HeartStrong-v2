@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {KeyboardAvoidingView} from 'react-native';
+import {KeyboardAvoidingView, ScrollView} from 'react-native';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
 import { Input } from '../components/Input';
@@ -43,27 +43,54 @@ class Register extends Component {
 
     render(){ // this is very underdeveloped
         return(
-            <Container>
-              <KeyboardAvoidingView behavior="padding">
+            // <Container>
+            
+              <KeyboardAvoidingView behavior = "height"
+              keyboardVerticalOffset = {-10} >
+              <ScrollView>
                 <Input 
                   placeholder="first name"
                   onChangeText = {this.handleUsername}
                 />
+              
                 <Input 
                   placeholder="last name"
                   onChangeText = {this.handlePassword}
                 />
-                <Input 
+                <Input
                   placeholder="username"
                   onChangeText = {this.handleUsername}
                 />
+              
+              {/* <KeyboardAvoidingView enabled = {true}
+                keyboardVerticalOffset = {0} > */}
                 <Input 
                   placeholder="password"
                   onChangeText = {this.handlePassword}
                 />
+                <Input 
+                  placeholder="first name"
+                  onChangeText = {this.handleUsername}
+                />
+              
+                <Input 
+                  placeholder="last name"
+                  onChangeText = {this.handlePassword}
+                />
+                <Input
+                  placeholder="username"
+                  onChangeText = {this.handleUsername}
+                />
+              
+              {/* <KeyboardAvoidingView enabled = {true}
+                keyboardVerticalOffset = {0} > */}
+                <Input 
+                  placeholder="password"
+                  onChangeText = {this.handlePassword}
+                />
+              </ScrollView>
               </KeyboardAvoidingView>
-                {/* <Text> hi </Text> */}
-            </Container>
+            //</Container>
         );
     }
 }

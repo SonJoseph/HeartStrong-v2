@@ -3,15 +3,15 @@ import { StatusBar, KeyboardAvoidingView, View, Text } from 'react-native';
 import { Container } from '../components/Container';
 
 
-class Home extends Component {
+class Journal extends Component {
     render(){
         return (
             <Container>
-                <Text> Welcome Home </Text>
+                <Text> Keep track of your goals </Text>
             </Container>
         )
     }
 }
 
 
-export default Home;
+export default Journal;

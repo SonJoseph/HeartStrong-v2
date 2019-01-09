@@ -2,8 +2,7 @@ import { createStackNavigator } from 'react-navigation';
 
 import Login from '../screens/Login';
 import Register from '../screens/Register';
-import Home from '../screens/Home';
-import Tracking from '../screens/Tracking';
+import MainNavigator from './mainRoutes';
 
 export default createStackNavigator({
     Login: {
@@ -19,6 +18,9 @@ export default createStackNavigator({
         }
     },
     Home: {
-        screen: Home,
+        screen: MainNavigator,
+        navigationOptions: {
+            headerTitle: 'Welcome',
+        }
     }
 });
