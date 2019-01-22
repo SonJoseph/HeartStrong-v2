@@ -34,7 +34,9 @@ class Login extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         if(responseJson.data == 1){
-          this.props.navigation.navigate('Home');
+          this.props.navigation.navigate('Home', {
+            username: username,
+          });
         }else{
           alert(responseJson.data);
         }

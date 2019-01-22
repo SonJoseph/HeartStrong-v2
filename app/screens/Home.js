@@ -5,9 +5,11 @@ import { Container } from '../components/Container';
 
 class Home extends Component {
     render(){
+        const { navigation } = this.props; // ES2015 destructuring assignment
+        const username = navigation.getParam('username','some default value') 
         return (
             <Container>
-                <Text> Welcome Home </Text>
+                <Text> Welcome Home {username} </Text>
             </Container>
         )
     }
