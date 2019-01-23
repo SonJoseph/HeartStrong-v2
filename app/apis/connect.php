@@ -7,10 +7,10 @@ $dbname = getenv("database_name");
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
-    printf("Connect failed: %s\n", $mysqli->connect_error);
+    // printf("Connect failed: %s\n", $mysqli->connect_error); handle connection error
     exit();
 } else {
-    printf("Connected to the database");
+    // printf("Connected to the database");
 }
 $connection->close();
 ?>
