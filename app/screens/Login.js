@@ -20,7 +20,7 @@ class Login extends Component {
   }
 
   login = (username, password) => {
-    return fetch('http://sonjoseph.website/heartstrong_backend/login.php', {
+    return fetch('https://heartstrong-joeson34.cloudapps.unc.edu/app/apis/login.php', {
         method: 'POST',
         headers: {
           'Accept' : 'application/json',
