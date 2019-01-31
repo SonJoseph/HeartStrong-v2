@@ -1,9 +1,5 @@
 /*
-    https://github.com/wix/react-native-calendars
-
-    To-do: 
-    back to app for video messaging
-    journaling
+https://github.com/wix/react-native-calendars
 */
 
 import React, { Component } from 'react';
@@ -14,21 +10,21 @@ import { Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
 class Tracking extends Component {
 
-    // const { navigation } = this.props; // ES2015 destructuring assignment
-    // const username = navigation.getParam('username','some default value') 
-
     constructor(props) {
         super(props);
         /*
         this.state = {};
         this.onDayPress = this.onDayPress.bind(this);
         */
+        const { navigation } = this.props; // ES2015 destructuring assignment
+        this.username = navigation.getParam('username','some default value');
         this.state = {
             items: {}
         };
     }
 
     render(){
+
         return (
                 <Agenda
                     items={this.state.items}
@@ -64,10 +60,20 @@ class Tracking extends Component {
         )
     }
     
-
-    /* Let's move to cloudapps first
     getWeights = () => {
-        return fetch('http://sonjoseph.website/heartstrong_backend/getWeights.php?=' + username, {
+        /*
+        this.state = {
+            items : {
+                "2018-11-29": [
+                    {
+                        "height": 69,
+                        "name": "test",
+                    },
+                ]
+            }
+        }
+        */
+        return fetch(serverRoot + '/app/apis/getWeights.php?user=' + this.username, {
             method: 'GET',
             headers: {
               'Accept' : 'application/json',
@@ -75,41 +81,19 @@ class Tracking extends Component {
           })
           .then((response) => response.json())
           .then((responseJson) => {
-            if(responseJson.data == 1){
-              this.props.navigation.navigate('Home');
-            }else{
-              alert(responseJson.data);
-            }
+            this.state.items = responseJson.items;
         })
     }
-    */
-    
 
     loadItems(day) {
         setTimeout(() => {
-            /*
-            "2018-11-29": Array [
-                Object {
-                "height": 69,
-                "name": "test",
-                },
-            ]
-            */
-        
-            this.state.items["2018-11-29"] = [];
-            this.state.items["2018-11-29"].push({
-                name: 'test',
-                height: Math.max(50, Math.floor(Math.random() * 150))
-            });
-            console.log(this.state.items);
-            
+            this.getWeights();
             const newItems = {};
             Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
             this.setState({
                 items: newItems
             });
         }, 1000);
-        // console.log(`Load Items for ${day.year}-${day.month}`);
     }
     
     renderItem(item) {

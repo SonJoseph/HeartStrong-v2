@@ -6,6 +6,7 @@ import { Input } from '../components/Input';
 import {ClearButton} from '../components/Button';
 
 class Login extends Component {
+
   state = {
     username : "",
     password: ""
@@ -20,7 +21,8 @@ class Login extends Component {
   }
 
   login = (username, password) => {
-    return fetch('https://heartstrong-joeson34.cloudapps.unc.edu/app/apis/login.php', {
+    
+    return fetch(serverRoot + '/app/apis/login.php', {
         method: 'POST',
         headers: {
           'Accept' : 'application/json',
@@ -41,6 +43,16 @@ class Login extends Component {
           alert(responseJson.data);
         }
       })
+    
+
+    /*
+    return fetch(root + '/app/apis/localhostTest.php',{
+      method: 'GET',
+    }).then((response) => response.json())
+    .then((responseJson) => {
+      alert(responseJson.data)
+    })
+    */
   }
 
   goRegister = () => {
