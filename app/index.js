@@ -1,6 +1,6 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import LoginNavigator from './config/loginRoutes';
+import App from './config/loginRoutes';
 import './config/global';
 
 EStyleSheet.build({
@@ -9,4 +9,4 @@ EStyleSheet.build({
   $inputText: '#797979',
 });
 
-export default () => <LoginNavigator />;
+export default () => <App />;

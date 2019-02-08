@@ -8,19 +8,6 @@ $get = 'SELECT Weight, Date, Unit FROM Weights WHERE Username = "' . $_GET["user
 $result = mysqli_query($db, $get);
 
 $weights = array();
-
-/*
-    this.state = {
-        items : {
-            "2018-11-29": [
-                {
-                    "height": 69,
-                    "name": "test",
-                },
-            ]
-        }
-    }
-*/
             
 while ($obj=mysqli_fetch_object($result))
 {

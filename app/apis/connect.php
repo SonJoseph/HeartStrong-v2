@@ -27,9 +27,13 @@ $dbname = 'heartstrongdb';
 
 $db = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($db->connect_error) {
-    //printf("Connect failed: %s\n", $db->connect_error);
-    //exit();
+    /*
+    printf("Connect failed: %s\n", $db->connect_error);
+    exit();
+    */
 } else {
-    //printf("Connected to the database");
+    /*
+    printf("Connected to the database");
+    */
 }
 ?>

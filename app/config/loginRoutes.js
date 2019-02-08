@@ -1,10 +1,11 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Login from '../screens/Login';
 import Register from '../screens/Register';
 import MainNavigator from './mainRoutes';
 
-export default createStackNavigator({
+
+const LoginNavigator = createStackNavigator({
     Login: {
         screen: Login,
         navigationOptions: {
@@ -24,3 +25,6 @@ export default createStackNavigator({
         }
     }
 });
+
+const App = createAppContainer(LoginNavigator);
+export default App;

@@ -3,10 +3,11 @@ https://github.com/wix/react-native-calendars
 */
 
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, KeyboardAvoidingView, View, Text } from 'react-native';
+import { StyleSheet, StatusBar, KeyboardAvoidingView, View, Text, Button } from 'react-native';
 import { Container } from '../components/Container';
 import { createBottomTabNavigator } from 'react-navigation';
 import { Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import {ClearButton} from '../components/Button';
 
 class Tracking extends Component {
 
@@ -24,7 +25,6 @@ class Tracking extends Component {
     }
 
     render(){
-
         return (
                 <Agenda
                     items={this.state.items}
@@ -59,7 +59,11 @@ class Tracking extends Component {
                 />
         )
     }
-    
+
+    addWeight = () => {
+        console.log("Hello")
+    }
+
     getWeights = () => {
         /*
         this.state = {
