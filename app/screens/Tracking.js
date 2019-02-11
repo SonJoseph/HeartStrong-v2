@@ -102,7 +102,19 @@ class Tracking extends Component {
     
     renderItem(item) {
         return (
-          <View style={[styles.item, {height: item.height}]}><Text>{item.name}</Text></View>
+            <View>
+                <View style={[styles.item, {height: item.height}]}>
+                    <Text>{item.name}</Text>
+                </View>
+                <Button
+                    title = "Add Weight"
+                    onPress = { () => this.addWeight()}
+                    // style = {
+                    //     flexDirection: 'row', 
+                    //     alignSelf: 'flex-start'
+                    // }
+                />
+            </View>
         );
     }
     

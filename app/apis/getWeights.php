@@ -11,7 +11,7 @@ $weights = array();
             
 while ($obj=mysqli_fetch_object($result))
 {
-    $weights += [$obj->Date => [[ "height" => 20, "name" => $obj->Weight . $obj->Unit]]];
+    $weights += [$obj->Date => [[ "height" => 50, "name" => $obj->Weight . $obj->Unit]]];
 }
 
 echo json_encode(array("items"=>$weights)); 
