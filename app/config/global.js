@@ -1,1 +1,1 @@
-global.serverRoot = 'http://152.23.103.170'
+global.serverRoot = 'http://152.23.187.148'
