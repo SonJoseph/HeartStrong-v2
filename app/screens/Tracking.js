@@ -60,10 +60,6 @@ class Tracking extends Component {
         )
     }
 
-    addWeight = () => {
-        console.log("Hello")
-    }
-
     getWeights = () => {
         /*
         this.state = {
@@ -90,14 +86,12 @@ class Tracking extends Component {
     }
 
     loadItems(day) {
-        setTimeout(() => {
             this.getWeights();
             const newItems = {};
             Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
             this.setState({
                 items: newItems
             });
-        }, 1000);
     }
     
     renderItem(item) {
@@ -106,22 +100,50 @@ class Tracking extends Component {
                 <View style={[styles.item, {height: item.height}]}>
                     <Text>{item.name}</Text>
                 </View>
-                <Button
-                    title = "Add Weight"
-                    onPress = { () => this.addWeight()}
-                    // style = {
-                    //     flexDirection: 'row', 
-                    //     alignSelf: 'flex-start'
-                    // }
-                />
+                <View>
+                    <Button
+                        title = "Add Weight"
+                        onPress = {() => this.addWeight()}
+                    />
+                </View>
             </View>
         );
     }
     
     renderEmptyDate() {
         return (
-          <View style={styles.emptyDate}><Text>This is empty date!</Text></View>
+            <View style={{
+                alignItems: 'center',
+            }}>
+                <Text>No data yet</Text>
+                <Button
+                    title = "Add Weight"
+                    onPress = { () => this.addWeight()}
+                />
+            </View>
         );
+    }
+
+    
+    addWeight = () => {
+        console.log("yooo")
+        /*
+        return fetch(serverRoot + '/app/apis/addWeight.php', {
+          method: 'POST',
+          headers: {
+            'Accept' : 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username: this.username,
+            
+          }),
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+          alert(responseJson.data);
+        })
+        */
     }
     
     rowHasChanged(r1, r2) {
