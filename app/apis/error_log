@@ -1,0 +1,29 @@
+[19-Feb-2019 18:11:51 UTC] PHP Fatal error:  Uncaught Error: Class 'mysqli' not found in C:\apache\HeartStrong-v2\app\apis\connect.php:28
+Stack trace:
+#0 {main}
+  thrown in C:\apache\HeartStrong-v2\app\apis\connect.php on line 28
+[19-Feb-2019 18:11:53 UTC] PHP Fatal error:  Uncaught Error: Class 'mysqli' not found in C:\apache\HeartStrong-v2\app\apis\connect.php:28
+Stack trace:
+#0 {main}
+  thrown in C:\apache\HeartStrong-v2\app\apis\connect.php on line 28
+[19-Feb-2019 18:11:54 UTC] PHP Fatal error:  Uncaught Error: Class 'mysqli' not found in C:\apache\HeartStrong-v2\app\apis\connect.php:28
+Stack trace:
+#0 {main}
+  thrown in C:\apache\HeartStrong-v2\app\apis\connect.php on line 28
+[19-Feb-2019 18:12:00 UTC] PHP Fatal error:  Uncaught Error: Class 'mysqli' not found in C:\apache\HeartStrong-v2\app\apis\connect.php:28
+Stack trace:
+#0 {main}
+  thrown in C:\apache\HeartStrong-v2\app\apis\connect.php on line 28
+[19-Feb-2019 18:12:04 UTC] PHP Fatal error:  Uncaught Error: Class 'mysqli' not found in C:\apache\HeartStrong-v2\app\apis\connect.php:28
+Stack trace:
+#0 C:\apache\HeartStrong-v2\app\apis\displayAims.php(2): require()
+#1 {main}
+  thrown in C:\apache\HeartStrong-v2\app\apis\connect.php on line 28
+[19-Feb-2019 18:20:07 UTC] PHP Fatal error:  Uncaught Error: Class 'mysqli' not found in C:\apache\HeartStrong-v2\app\apis\connect.php:28
+Stack trace:
+#0 {main}
+  thrown in C:\apache\HeartStrong-v2\app\apis\connect.php on line 28
+[19-Feb-2019 18:20:09 UTC] PHP Fatal error:  Uncaught Error: Class 'mysqli' not found in C:\apache\HeartStrong-v2\app\apis\connect.php:28
+Stack trace:
+#0 {main}
+  thrown in C:\apache\HeartStrong-v2\app\apis\connect.php on line 28

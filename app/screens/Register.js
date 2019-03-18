@@ -1,98 +1,44 @@
 import React, { Component } from 'react';
-import {KeyboardAvoidingView, ScrollView} from 'react-native';
+import { Text, View, StyleSheet} from 'react-native';
+import { RegForm } from '../components/RegForm';
 import { Container } from '../components/Container';
-import { Logo } from '../components/Logo';
 import { Input } from '../components/Input';
+import { ClearButton, Button } from '../components/Button';
+//import EStylesheet from 'react-native-extended-stylesheet';
 
 class Register extends Component {
+    constructor () {
+      super()
+      this.state = {
+        status: true,
+        status2: false,
+        status3: false,
+        username : "",
+        password: "",
+        firstname: "",
+        lastname: ""
+      }
+    }
+   
 
-    state = {
-      username : "",
-      password: ""
-    }
-    
-    handleUsername = (text) => {
-      this.setState({username: text})
-    }
-
-    handlePassword = (text) => {
-      this.setState({password: text})
-    }
-  
-    register = (username, password) => {
-      return fetch(serverRoot + '/app/apis/register.php', {
-          method: 'POST',
-          headers: {
-            'Accept' : 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstname: "test",
-            lastname: "test",
-            age: 20,
-            address: "test",
-            username: username,
-            password: password
-          }),
-        })
-        .then((response) => response.json())
-        .then((responseJson) => {
-          alert(responseJson.data);
-        })
-    }
-
-    render(){ // this is very underdeveloped
-        return(
-            // <Container>
-            
-              <KeyboardAvoidingView behavior = "height"
-              keyboardVerticalOffset = {-10} >
-              <ScrollView>
-                <Input 
-                  placeholder="first name"
-                  onChangeText = {this.handleUsername}
-                />
-              
-                <Input 
-                  placeholder="last name"
-                  onChangeText = {this.handlePassword}
-                />
-                <Input
-                  placeholder="username"
-                  onChangeText = {this.handleUsername}
-                />
-              
-              {/* <KeyboardAvoidingView enabled = {true}
-                keyboardVerticalOffset = {0} > */}
-                <Input 
-                  placeholder="password"
-                  onChangeText = {this.handlePassword}
-                />
-                <Input 
-                  placeholder="first name"
-                  onChangeText = {this.handleUsername}
-                />
-              
-                <Input 
-                  placeholder="last name"
-                  onChangeText = {this.handlePassword}
-                />
-                <Input
-                  placeholder="username"
-                  onChangeText = {this.handleUsername}
-                />
-              
-              {/* <KeyboardAvoidingView enabled = {true}
-                keyboardVerticalOffset = {0} > */}
-                <Input 
-                  placeholder="password"
-                  onChangeText = {this.handlePassword}
-                />
-              </ScrollView>
-              </KeyboardAvoidingView>
-            //</Container>
-        );
-    }
+  render(){
+    return (
+      <View style ={styles.container}>
+        <RegForm/>
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#36485f',
+    paddingLeft: 60,
+    paddingRight: 60,
+  }
+});
+
 
 export default Register;

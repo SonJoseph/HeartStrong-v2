@@ -8,7 +8,7 @@ import {
     AsyncStorage
 } from 'react-native';
 import { Container } from '../components/Container';
-
+import 'react-native-gesture-handler';
 
 class Home extends Component {
     constructor(props){

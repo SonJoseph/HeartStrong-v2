@@ -9,10 +9,11 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@expo/vector-icons": "^6.2.0",
+    "@babel/cli": "^7.0.0",
+    "@expo/vector-icons": "6.2.0",
     "color": "3.0.0",
-    "expo": "^30.0.0",
-    "moment": "2.18.1",
+    "expo": "^30.0.1",
+    "moment": "^2.24.0",
     "native": "^0.3.3",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
@@ -20,5 +21,8 @@
     "react-native-elements": "^1.1.0",
     "react-native-extended-stylesheet": "0.8.0",
     "react-native-modal-datetime-picker": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0"
   }
 }
