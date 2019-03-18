@@ -1,15 +1,49 @@
 import React, { Component } from 'react';
-import { StatusBar, KeyboardAvoidingView, View, Text } from 'react-native';
+import { 
+    StatusBar, 
+    KeyboardAvoidingView, 
+    View, 
+    Text,
+    Button,
+    AsyncStorage
+} from 'react-native';
 import { Container } from '../components/Container';
 
 
 class Home extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            username : ""
+        }
+    }
+
+    
+    getUser = async() => {
+        const val = await AsyncStorage.getItem("userToken");
+        this.setState({username : val});
+    }
+    
+
+    signOut = async () => {
+        await AsyncStorage.clear();
+        this.props.navigation.navigate('Auth');
+    }
+
+    
+    componentDidMount() {
+        this.getUser();
+    }
+    
+
     render(){
-        const { navigation } = this.props; // ES2015 destructuring assignment
-        const username = navigation.getParam('username','some default value') 
         return (
             <Container>
-                <Text> Welcome Home {username} </Text>
+                <Text> Welcome Home {this.state.username} </Text>
+                <Button
+                    title="Sign out"
+                    onPress={this.signOut}
+                />
             </Container>
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import App from './config/loginRoutes';
+import App from './config/NavContainer';
 import './config/global';
 
 EStyleSheet.build({

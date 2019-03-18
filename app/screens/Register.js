@@ -20,7 +20,7 @@ class Register extends Component {
     }
   
     register = (username, password) => {
-      return fetch('http://sonjoseph.website/heartstrong_backend/register.php', {
+      return fetch(serverRoot + '/app/apis/register.php', {
           method: 'POST',
           headers: {
             'Accept' : 'application/json',

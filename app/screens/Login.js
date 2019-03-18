@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { StatusBar, KeyboardAvoidingView, View } from 'react-native';
+import { 
+  StatusBar,
+  KeyboardAvoidingView, 
+  View,
+  AsyncStorage
+} from 'react-native';
 import { Container } from '../components/Container';
 import {Logo} from '../components/Logo';
 import { Input } from '../components/Input';
@@ -21,7 +26,6 @@ class Login extends Component {
   }
 
   login = (username, password) => {
-    
     return fetch(serverRoot + '/app/apis/login.php', {
         method: 'POST',
         headers: {
@@ -36,23 +40,21 @@ class Login extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         if(responseJson.data == 1){
+          this.setUserToken();
+          /*
           this.props.navigation.navigate('Home', {
             username: username,
           });
+          */
         }else{
           alert(responseJson.data);
         }
       })
-    
+  }
 
-    /*
-    return fetch(root + '/app/apis/localhostTest.php',{
-      method: 'GET',
-    }).then((response) => response.json())
-    .then((responseJson) => {
-      alert(responseJson.data)
-    })
-    */
+  setUserToken = async () => {
+    await AsyncStorage.setItem('userToken', this.state.username);
+    this.props.navigation.navigate('App');
   }
 
   goRegister = () => {
