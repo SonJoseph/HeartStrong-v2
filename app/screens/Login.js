@@ -21,14 +21,20 @@ class Login extends Component {
   }
 
   login = (username, password) => {
-    
+    //alert(username + " " + password);
+    _parseJSON = (response) => {
+      return response.text().then(function(text) {
+        return text ? JSON.parse(text) : {}
+      })
+    }
     return fetch(serverRoot + '/app/apis/login.php', {
         method: 'POST',
         headers: {
           'Accept' : 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
+        body: JSON.stringify(
+          {
           username: username,
           password: password
         }),
@@ -43,16 +49,6 @@ class Login extends Component {
           alert(responseJson.data);
         }
       })
-    
-
-    /*
-    return fetch(root + '/app/apis/localhostTest.php',{
-      method: 'GET',
-    }).then((response) => response.json())
-    .then((responseJson) => {
-      alert(responseJson.data)
-    })
-    */
   }
 
   goRegister = () => {

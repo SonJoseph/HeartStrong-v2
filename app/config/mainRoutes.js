@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { createBottomTabNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Tracking from '../screens/Tracking';

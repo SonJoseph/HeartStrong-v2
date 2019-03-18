@@ -3,6 +3,8 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import App from './config/loginRoutes';
 import './config/global';
 
+
+
 EStyleSheet.build({
   $primaryPink: '#e28383',
   $white: '#FFFFFF',

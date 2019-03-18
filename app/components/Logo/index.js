@@ -1,4 +1,5 @@
 import Logo from './Logo';
+import RegisterLogo from './RegisterLogo';
 import styles from './styles';
 
-export {Logo, styles};
+export {RegisterLogo,Logo, styles};

@@ -1,5 +1,5 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-
+import 'react-native-gesture-handler';
 import Login from '../screens/Login';
 import Register from '../screens/Register';
 import MainNavigator from './mainRoutes';
